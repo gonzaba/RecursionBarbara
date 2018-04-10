@@ -14,5 +14,10 @@ public class Pair<E> {
 	
 	public Pair() {}
 	
+	 public String toString() {
+			return "(" + first + "," + second + ")"; 
+	    	
+	    }
+	
 	
 }

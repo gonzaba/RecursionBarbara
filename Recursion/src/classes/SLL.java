@@ -103,22 +103,27 @@ public ArrayList<Pair<E>> consecutiveIncreasingPairs() {
    return result; 
 }
 
-public void recCIP(Node<E> node, ArrayList<Pair<E>> result) {
-	if(first==null || first.getNext()==null) {
-		return ;
-	}
-	Node<E> current = first;
+public void recCIP(Node<E> current, ArrayList<Pair<E>> result) {
 	
-		if((current.getNext()==null) || (current.getNext().getNext()==null)) {
-			
-		}
-		
-		current.getNext(); 
-	
-	
-	
-	
-}
+	        if (current.getNext()==null || current.getNext().getNext()==null) {
+            if (current.getNext()==null) {    }
+            else {
+                if (((Comparable<E>) current.getElement()).compareTo(current.getNext().getElement())<0)
+                    result.add(new Pair<E>(current.getElement(), current.getNext().getElement()));
+                else
+                    result.add(new Pair<E>(current.getNext().getElement(), current.getElement()));
+            }
+            return;
+        }
+
+        if (((Comparable<E>) current.getElement()).compareTo(current.getNext().getElement())<0)
+            result.add(new Pair<E>(current.getElement(), current.getNext().getElement()));
+        else
+            result.add(new Pair<E>(current.getNext().getElement(), current.getElement()));
+
+        recCIP(current.getNext().getNext(), result);
+    }
+
 
 
 	

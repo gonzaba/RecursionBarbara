@@ -21,7 +21,7 @@ public class Excercise3 {
 		
 		System.out.println(list);
 		System.out.println("List after using lessThan method");
-		System.out.print(list.lessThan(6));
+		System.out.println(list.lessThan(6));
 		
 		System.out.println("List after using ConsecutiveIncreasingPairs method:");
 		System.out.print(list.consecutiveIncreasingPairs());
