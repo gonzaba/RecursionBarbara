@@ -3,7 +3,7 @@ package testers;
 import java.util.ArrayList;
 
 import classes.ArrayQueue;
-import interfaces.Queue;
+
 
 public class Exercise4 {
 
@@ -23,6 +23,8 @@ public class Exercise4 {
 
 	ArrayQueue<E> q = new ArrayQueue<>();
 	
+
+	ArrayList<Integer> results = new ArrayList<Integer>();
 	
 	int i=0;
 	while(i<list.size()-1) {
@@ -32,13 +34,17 @@ public class Exercise4 {
 	
 	q.sort(q);
 	
-	System.out.println(q);
+	int temp = 0;
+	while(!q.isEmpty()) {
 	
-	
-	
-	
+	temp = (int) q.dequeue();
+	System.out.print(temp + " ");
+	results.add(temp);
 	
 	}
-
+	list = results;
 	
+	System.out.println("");
+	System.out.println("List after sorting it: "+ list);
+	}
 }
